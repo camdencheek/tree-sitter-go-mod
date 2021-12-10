@@ -1,0 +1,11 @@
+prefix=@PREFIX@
+libdir=@LIBDIR@
+includedir=@INCLUDEDIR@
+additionallibs=@ADDITIONALLIBS@
+
+Name: tree-sitter-gomod
+Description: tree-sitter grammar for go.mod files
+URL: https://github.com/camdencheek/tree-sitter-go-mod
+Version: @VERSION@
+Libs: -L${libdir} ${additionallibs} -ltree-sitter-gomod
+Cflags: -I${includedir}
