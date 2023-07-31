@@ -1,6 +1,6 @@
 {
-  "name": "tree-sitter-go-mod",
-  "version": "0.1.0",
+  "name": "tree-sitter-gomod",
+  "version": "1.0.0",
   "description": "A tree-sitter grammar for go.mod files",
   "main": "bindings/node",
   "scripts": {
@@ -8,18 +8,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/camdencheek/tree-sitter-go-mod.git"
+    "url": "git+https://github.com/camdencheek/tree-sitter-gomod.git"
   },
   "keywords": [
     "tree-sitter",
     "go"
   ],
   "author": "Camden Cheek <camden@ccheek.com>",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/camdencheek/tree-sitter-go-mod/issues"
+    "url": "https://github.com/camdencheek/tree-sitter-gomod/issues"
   },
-  "homepage": "https://github.com/camdencheek/tree-sitter-go-mod#readme",
+  "homepage": "https://github.com/camdencheek/tree-sitter-gomod#readme",
   "dependencies": {
     "nan": "^2.14.2"
   },

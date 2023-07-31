@@ -5,7 +5,7 @@
 #pragma GCC diagnostic ignored "-Wmissing-field-initializers"
 #endif
 
-#define LANGUAGE_VERSION 13
+#define LANGUAGE_VERSION 14
 #define STATE_COUNT 149
 #define LARGE_STATE_COUNT 2
 #define SYMBOL_COUNT 47
@@ -65,7 +65,7 @@ enum {
   aux_sym_retract_directive_repeat1 = 46,
 };
 
-static const char *ts_symbol_names[] = {
+static const char * const ts_symbol_names[] = {
   [ts_builtin_sym_end] = "end",
   [sym_raw_string_literal] = "raw_string_literal",
   [anon_sym_DQUOTE] = "\"",
@@ -115,7 +115,7 @@ static const char *ts_symbol_names[] = {
   [aux_sym_retract_directive_repeat1] = "retract_directive_repeat1",
 };
 
-static TSSymbol ts_symbol_map[] = {
+static const TSSymbol ts_symbol_map[] = {
   [ts_builtin_sym_end] = ts_builtin_sym_end,
   [sym_raw_string_literal] = sym_raw_string_literal,
   [anon_sym_DQUOTE] = anon_sym_DQUOTE,
@@ -356,12 +356,164 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
   },
 };
 
-static TSSymbol ts_alias_sequences[PRODUCTION_ID_COUNT][MAX_ALIAS_SEQUENCE_LENGTH] = {
+static const TSSymbol ts_alias_sequences[PRODUCTION_ID_COUNT][MAX_ALIAS_SEQUENCE_LENGTH] = {
   [0] = {0},
 };
 
-static uint16_t ts_non_terminal_alias_map[] = {
+static const uint16_t ts_non_terminal_alias_map[] = {
   0,
+};
+
+static const TSStateId ts_primary_state_ids[STATE_COUNT] = {
+  [0] = 0,
+  [1] = 1,
+  [2] = 2,
+  [3] = 3,
+  [4] = 4,
+  [5] = 5,
+  [6] = 6,
+  [7] = 7,
+  [8] = 8,
+  [9] = 9,
+  [10] = 10,
+  [11] = 11,
+  [12] = 12,
+  [13] = 13,
+  [14] = 14,
+  [15] = 15,
+  [16] = 16,
+  [17] = 17,
+  [18] = 18,
+  [19] = 19,
+  [20] = 20,
+  [21] = 21,
+  [22] = 22,
+  [23] = 23,
+  [24] = 24,
+  [25] = 25,
+  [26] = 26,
+  [27] = 24,
+  [28] = 25,
+  [29] = 26,
+  [30] = 30,
+  [31] = 31,
+  [32] = 32,
+  [33] = 33,
+  [34] = 34,
+  [35] = 35,
+  [36] = 36,
+  [37] = 37,
+  [38] = 38,
+  [39] = 39,
+  [40] = 40,
+  [41] = 41,
+  [42] = 42,
+  [43] = 43,
+  [44] = 44,
+  [45] = 34,
+  [46] = 40,
+  [47] = 37,
+  [48] = 48,
+  [49] = 49,
+  [50] = 50,
+  [51] = 51,
+  [52] = 35,
+  [53] = 53,
+  [54] = 54,
+  [55] = 55,
+  [56] = 56,
+  [57] = 57,
+  [58] = 58,
+  [59] = 59,
+  [60] = 60,
+  [61] = 61,
+  [62] = 62,
+  [63] = 63,
+  [64] = 64,
+  [65] = 65,
+  [66] = 66,
+  [67] = 39,
+  [68] = 68,
+  [69] = 42,
+  [70] = 57,
+  [71] = 53,
+  [72] = 72,
+  [73] = 73,
+  [74] = 14,
+  [75] = 62,
+  [76] = 76,
+  [77] = 77,
+  [78] = 78,
+  [79] = 79,
+  [80] = 78,
+  [81] = 79,
+  [82] = 78,
+  [83] = 79,
+  [84] = 18,
+  [85] = 79,
+  [86] = 17,
+  [87] = 16,
+  [88] = 65,
+  [89] = 64,
+  [90] = 56,
+  [91] = 61,
+  [92] = 92,
+  [93] = 54,
+  [94] = 78,
+  [95] = 95,
+  [96] = 14,
+  [97] = 16,
+  [98] = 17,
+  [99] = 18,
+  [100] = 61,
+  [101] = 101,
+  [102] = 102,
+  [103] = 103,
+  [104] = 104,
+  [105] = 17,
+  [106] = 106,
+  [107] = 18,
+  [108] = 108,
+  [109] = 14,
+  [110] = 110,
+  [111] = 111,
+  [112] = 112,
+  [113] = 113,
+  [114] = 114,
+  [115] = 115,
+  [116] = 116,
+  [117] = 117,
+  [118] = 118,
+  [119] = 119,
+  [120] = 120,
+  [121] = 61,
+  [122] = 122,
+  [123] = 123,
+  [124] = 124,
+  [125] = 125,
+  [126] = 16,
+  [127] = 106,
+  [128] = 110,
+  [129] = 129,
+  [130] = 120,
+  [131] = 114,
+  [132] = 112,
+  [133] = 133,
+  [134] = 134,
+  [135] = 135,
+  [136] = 136,
+  [137] = 129,
+  [138] = 125,
+  [139] = 102,
+  [140] = 140,
+  [141] = 141,
+  [142] = 142,
+  [143] = 118,
+  [144] = 144,
+  [145] = 111,
+  [146] = 146,
+  [147] = 113,
+  [148] = 148,
 };
 
 static bool ts_lex(TSLexer *lexer, TSStateId state) {
@@ -871,7 +1023,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
   }
 }
 
-static TSLexMode ts_lex_modes[STATE_COUNT] = {
+static const TSLexMode ts_lex_modes[STATE_COUNT] = {
   [0] = {.lex_state = 0},
   [1] = {.lex_state = 0},
   [2] = {.lex_state = 0},
@@ -1023,7 +1175,7 @@ static TSLexMode ts_lex_modes[STATE_COUNT] = {
   [148] = {(TSStateId)(-1)},
 };
 
-static uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
+static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
   [0] = {
     [sym_comment] = STATE(0),
     [ts_builtin_sym_end] = ACTIONS(1),
@@ -1066,7 +1218,7 @@ static uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
   },
 };
 
-static uint16_t ts_small_parse_table[] = {
+static const uint16_t ts_small_parse_table[] = {
   [0] = 11,
     ACTIONS(3), 1,
       anon_sym_SLASH_SLASH,
@@ -2992,7 +3144,7 @@ static uint16_t ts_small_parse_table[] = {
       ts_builtin_sym_end,
 };
 
-static uint32_t ts_small_parse_table_map[] = {
+static const uint32_t ts_small_parse_table_map[] = {
   [SMALL_STATE(2)] = 0,
   [SMALL_STATE(3)] = 40,
   [SMALL_STATE(4)] = 82,
@@ -3142,7 +3294,7 @@ static uint32_t ts_small_parse_table_map[] = {
   [SMALL_STATE(148)] = 2670,
 };
 
-static TSParseActionEntry ts_parse_actions[] = {
+static const TSParseActionEntry ts_parse_actions[] = {
   [0] = {.entry = {.count = 0, .reusable = false}},
   [1] = {.entry = {.count = 1, .reusable = false}}, RECOVER(),
   [3] = {.entry = {.count = 1, .reusable = true}}, SHIFT(134),
@@ -3320,7 +3472,7 @@ extern "C" {
 #endif
 
 extern const TSLanguage *tree_sitter_gomod(void) {
-  static TSLanguage language = {
+  static const TSLanguage language = {
     .version = LANGUAGE_VERSION,
     .symbol_count = SYMBOL_COUNT,
     .alias_count = ALIAS_COUNT,
@@ -3331,17 +3483,18 @@ extern const TSLanguage *tree_sitter_gomod(void) {
     .production_id_count = PRODUCTION_ID_COUNT,
     .field_count = FIELD_COUNT,
     .max_alias_sequence_length = MAX_ALIAS_SEQUENCE_LENGTH,
-    .parse_table = (const uint16_t *)ts_parse_table,
-    .small_parse_table = (const uint16_t *)ts_small_parse_table,
-    .small_parse_table_map = (const uint32_t *)ts_small_parse_table_map,
+    .parse_table = &ts_parse_table[0][0],
+    .small_parse_table = ts_small_parse_table,
+    .small_parse_table_map = ts_small_parse_table_map,
     .parse_actions = ts_parse_actions,
     .symbol_names = ts_symbol_names,
     .symbol_metadata = ts_symbol_metadata,
     .public_symbol_map = ts_symbol_map,
     .alias_map = ts_non_terminal_alias_map,
-    .alias_sequences = (const TSSymbol *)ts_alias_sequences,
+    .alias_sequences = &ts_alias_sequences[0][0],
     .lex_modes = ts_lex_modes,
     .lex_fn = ts_lex,
+    .primary_state_ids = ts_primary_state_ids,
   };
   return &language;
 }
