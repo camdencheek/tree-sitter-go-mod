@@ -11,6 +11,7 @@ module.exports = grammar({
       choice(
         $.module_directive,
         $.go_directive,
+        $.toolchain_directive,
         $.require_directive,
         $.exclude_directive,
         $.replace_directive,
@@ -60,6 +61,14 @@ module.exports = grammar({
       ),
 
     go_directive: ($) => seq("go", $.go_version, "\n"),
+
+    toolchain_directive: ($) =>
+      seq(
+        "toolchain",
+        field('name', $.toolchain_name),
+      ),
+
+    toolchain_name: ($) => $._string_or_ident,
 
     require_directive: ($) =>
       seq(
