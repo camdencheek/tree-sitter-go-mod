@@ -21,6 +21,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "toolchain_directive"
+        },
+        {
+          "type": "SYMBOL",
           "name": "require_directive"
         },
         {
@@ -237,6 +241,27 @@
           "value": "\n"
         }
       ]
+    },
+    "toolchain_directive": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "toolchain"
+        },
+        {
+          "type": "FIELD",
+          "name": "name",
+          "content": {
+            "type": "SYMBOL",
+            "name": "toolchain_name"
+          }
+        }
+      ]
+    },
+    "toolchain_name": {
+      "type": "SYMBOL",
+      "name": "_string_or_ident"
     },
     "require_directive": {
       "type": "SEQ",
