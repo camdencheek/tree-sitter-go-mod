@@ -11,11 +11,12 @@ module.exports = grammar({
       choice(
         $.module_directive,
         $.go_directive,
+        $.tool_directive,
         $.toolchain_directive,
         $.require_directive,
         $.exclude_directive,
         $.replace_directive,
-        $.retract_directive
+        $.retract_directive,
       ),
 
     _string_literal: ($) =>
@@ -27,9 +28,9 @@ module.exports = grammar({
       seq(
         '"',
         repeat(
-          choice(token.immediate(prec(1, /[^"\n\\]+/)), $.escape_sequence)
+          choice(token.immediate(prec(1, /[^"\n\\]+/)), $.escape_sequence),
         ),
-        '"'
+        '"',
       ),
 
     escape_sequence: ($) =>
@@ -41,9 +42,9 @@ module.exports = grammar({
             /\d{2,3}/,
             /x[0-9a-fA-F]{2,}/,
             /u[0-9a-fA-F]{4}/,
-            /U[0-9a-fA-F]{8}/
-          )
-        )
+            /U[0-9a-fA-F]{8}/,
+          ),
+        ),
       ),
 
     _identifier: ($) => token(/[^\s,\[\]]+/),
@@ -53,20 +54,18 @@ module.exports = grammar({
     module_path: ($) => $._string_or_ident,
     go_version: ($) => $._string_or_ident,
     version: ($) => $._string_or_ident,
+    tool: ($) => $._string_or_ident,
 
     module_directive: ($) =>
       seq(
         "module",
-        choice($.module_path, seq("(", "\n", $.module_path, "\n", ")"))
+        choice($.module_path, seq("(", "\n", $.module_path, "\n", ")")),
       ),
 
     go_directive: ($) => seq("go", $.go_version, "\n"),
 
     toolchain_directive: ($) =>
-      seq(
-        "toolchain",
-        field('name', $.toolchain_name),
-      ),
+      seq("toolchain", field("name", $.toolchain_name)),
 
     toolchain_name: ($) => $._string_or_ident,
 
@@ -75,8 +74,8 @@ module.exports = grammar({
         "require",
         choice(
           $.require_spec,
-          seq("(", "\n", repeat($.require_spec), ")", "\n")
-        )
+          seq("(", "\n", repeat($.require_spec), ")", "\n"),
+        ),
       ),
 
     require_spec: ($) => seq($.module_path, $.version, "\n"),
@@ -86,8 +85,8 @@ module.exports = grammar({
         "exclude",
         choice(
           $.exclude_spec,
-          seq("(", "\n", repeat($.exclude_spec), ")", "\n")
-        )
+          seq("(", "\n", repeat($.exclude_spec), ")", "\n"),
+        ),
       ),
 
     exclude_spec: ($) => seq($.module_path, $.version, "\n"),
@@ -97,8 +96,8 @@ module.exports = grammar({
         "replace",
         choice(
           $.replace_spec,
-          seq("(", "\n", repeat($.replace_spec), ")", "\n")
-        )
+          seq("(", "\n", repeat($.replace_spec), ")", "\n"),
+        ),
       ),
 
     replace_spec: ($) =>
@@ -110,9 +109,12 @@ module.exports = grammar({
           "=>",
           $.module_path,
           $.version,
-          "\n"
-        )
+          "\n",
+        ),
       ),
+
+    tool_directive: ($) =>
+      seq("tool", choice($.tool, seq("(", "\n", repeat($.tool), ")", "\n"))),
 
     file_path: ($) => $._identifier,
 
@@ -121,14 +123,14 @@ module.exports = grammar({
         "retract",
         choice(
           seq("(", "\n", repeat($.retract_spec), ")", "\n"),
-          $.retract_spec
-        )
+          $.retract_spec,
+        ),
       ),
 
     retract_spec: ($) =>
       seq(
         choice(seq("[", $.version, prec(1, ","), $.version, "]"), $.version),
-        "\n"
+        "\n",
       ),
 
     comment: ($) => seq("//", /.*/),

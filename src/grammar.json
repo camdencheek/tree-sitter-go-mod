@@ -22,6 +22,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "tool_directive"
+        },
+        {
+          "type": "SYMBOL",
           "name": "toolchain_directive"
         },
         {
@@ -180,6 +184,10 @@
       "name": "_string_or_ident"
     },
     "version": {
+      "type": "SYMBOL",
+      "name": "_string_or_ident"
+    },
+    "tool": {
       "type": "SYMBOL",
       "name": "_string_or_ident"
     },
@@ -506,6 +514,52 @@
             {
               "type": "STRING",
               "value": "\n"
+            }
+          ]
+        }
+      ]
+    },
+    "tool_directive": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "tool"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "tool"
+            },
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": "("
+                },
+                {
+                  "type": "STRING",
+                  "value": "\n"
+                },
+                {
+                  "type": "REPEAT",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "tool"
+                  }
+                },
+                {
+                  "type": "STRING",
+                  "value": ")"
+                },
+                {
+                  "type": "STRING",
+                  "value": "\n"
+                }
+              ]
             }
           ]
         }
