@@ -1,7 +1,7 @@
 [package]
 name = "tree-sitter-gomod"
 description = "gomod grammar for the tree-sitter parsing library"
-version = "1.1.0"
+version = "1.1.1"
 keywords = ["incremental", "parsing", "gomod"]
 categories = ["parsing", "text-editors"]
 repository = "https://github.com/camdencheek/tree-sitter-go-mod"
@@ -15,7 +15,7 @@ include = ["bindings/rust/*", "grammar.js", "queries/*", "src/*"]
 path = "bindings/rust/lib.rs"
 
 [dependencies]
-tree-sitter-language = "0.1.0"
+tree-sitter-language = "0.1.3"
 
 [build-dependencies]
 cc = "1.0"

@@ -1,0 +1,35 @@
+{
+  "grammars": [
+    {
+      "name": "gomod",
+      "camelcase": "Gomod",
+      "scope": "source.gomod",
+      "path": ".",
+      "file-types": [
+        "go.mod"
+      ]
+    }
+  ],
+  "metadata": {
+    "version": "1.0.2",
+    "license": "MIT",
+    "description": "A tree-sitter grammar for go.mod files",
+    "authors": [
+      {
+        "name": "Camden Cheek",
+        "email": "camden@ccheek.com"
+      }
+    ],
+    "links": {
+      "repository": "git+https://github.com/camdencheek/tree-sitter-gomod.git"
+    }
+  },
+  "bindings": {
+    "c": true,
+    "go": true,
+    "node": true,
+    "python": true,
+    "rust": true,
+    "swift": true
+  }
+}
