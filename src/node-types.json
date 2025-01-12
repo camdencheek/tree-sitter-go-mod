@@ -262,7 +262,45 @@
           "named": true
         },
         {
+          "type": "tool_directive",
+          "named": true
+        },
+        {
           "type": "toolchain_directive",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "tool",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "interpreted_string_literal",
+          "named": true
+        },
+        {
+          "type": "raw_string_literal",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "tool_directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "tool",
           "named": true
         }
       ]
@@ -388,6 +426,10 @@
   },
   {
     "type": "retract",
+    "named": false
+  },
+  {
+    "type": "tool",
     "named": false
   },
   {
