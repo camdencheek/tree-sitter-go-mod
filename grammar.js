@@ -17,6 +17,7 @@ module.exports = grammar({
         $.exclude_directive,
         $.replace_directive,
         $.retract_directive,
+        $.ignore_directive,
       ),
 
     _string_literal: ($) =>
@@ -132,6 +133,17 @@ module.exports = grammar({
         choice(seq("[", $.version, prec(1, ","), $.version, "]"), $.version),
         "\n",
       ),
+
+    ignore_directive: ($) =>
+      seq(
+        "ignore",
+        choice(
+          seq("(", "\n", repeat($.ignore_spec), ")", "\n"),
+          $.ignore_spec,
+        ),
+      ),
+
+    ignore_spec: ($) => seq($.file_path, "\n"),
 
     comment: ($) => seq("//", /.*/),
   },

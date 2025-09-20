@@ -43,6 +43,10 @@
         {
           "type": "SYMBOL",
           "name": "retract_directive"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "ignore_directive"
         }
       ]
     },
@@ -662,6 +666,65 @@
         }
       ]
     },
+    "ignore_directive": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "ignore"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": "("
+                },
+                {
+                  "type": "STRING",
+                  "value": "\n"
+                },
+                {
+                  "type": "REPEAT",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "ignore_spec"
+                  }
+                },
+                {
+                  "type": "STRING",
+                  "value": ")"
+                },
+                {
+                  "type": "STRING",
+                  "value": "\n"
+                }
+              ]
+            },
+            {
+              "type": "SYMBOL",
+              "name": "ignore_spec"
+            }
+          ]
+        }
+      ]
+    },
+    "ignore_spec": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "file_path"
+        },
+        {
+          "type": "STRING",
+          "value": "\n"
+        }
+      ]
+    },
     "comment": {
       "type": "SEQ",
       "members": [
@@ -690,5 +753,6 @@
   "precedences": [],
   "externals": [],
   "inline": [],
-  "supertypes": []
+  "supertypes": [],
+  "reserved": {}
 }

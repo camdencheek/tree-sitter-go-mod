@@ -2,6 +2,7 @@
   {
     "type": "comment",
     "named": true,
+    "extra": true,
     "fields": {}
   },
   {
@@ -72,6 +73,36 @@
         },
         {
           "type": "raw_string_literal",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "ignore_directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "ignore_spec",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "ignore_spec",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "file_path",
           "named": true
         }
       ]
@@ -246,6 +277,10 @@
           "named": true
         },
         {
+          "type": "ignore_directive",
+          "named": true
+        },
+        {
           "type": "module_directive",
           "named": true
         },
@@ -406,6 +441,10 @@
   },
   {
     "type": "go",
+    "named": false
+  },
+  {
+    "type": "ignore",
     "named": false
   },
   {
