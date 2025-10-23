@@ -163,7 +163,7 @@
       "type": "TOKEN",
       "content": {
         "type": "PATTERN",
-        "value": "[^\\s,\\[\\]]+"
+        "value": "[^\\s,\\[\\]/][^\\s,\\[\\]]+"
       }
     },
     "_string_or_ident": {

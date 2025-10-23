@@ -48,7 +48,7 @@ module.exports = grammar({
         ),
       ),
 
-    _identifier: ($) => token(/[^\s,\[\]]+/),
+    _identifier: ($) => token(/[^\s,\[\]/][^\s,\[\]]+/),
 
     _string_or_ident: ($) => choice($._string_literal, $._identifier),
 
