@@ -73,3 +73,17 @@ replace (
       (module_path)
       (module_path)
       (version))))
+
+==================
+Replace with a path
+==================
+
+replace golang.org/x/net => /path/to/example.com/x/net
+
+---
+
+(source_file
+  (replace_directive
+    (replace_spec
+      (module_path)
+      (file_path))))
